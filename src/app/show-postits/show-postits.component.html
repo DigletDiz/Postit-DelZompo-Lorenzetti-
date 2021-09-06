@@ -1,0 +1,15 @@
+<br/>
+<br/>
+<input type="checkbox" #onlyFavourites (change) = "{}"> Only Favourites
+
+<li *ngFor='let post of postitsToShow(onlyFavourites.checked)'>
+  <button (click)="showContent(post)">
+  {{post.title}} <span *ngIf="post.favourite === true">*</span>
+  <p *ngIf="post === openPostit">
+  {{post.content}}
+  <br/>
+  <br/>
+  <button (click)="sendPostsItToDelete(post)"> Delete </button>
+  </p>
+  </button>
+</li>
